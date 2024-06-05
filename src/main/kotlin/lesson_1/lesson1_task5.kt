@@ -1,27 +1,16 @@
 package org.example.lesson_1
 
+const val SECOND_IN_MINUTE = 60
+const val SECOND_IN_HOUR = 3600
+
 fun main() {
 
     val time = 6480
 
-    val hours = time / 3600
-    val minutes = (time - hours * 3600) / 60
-    val seconds = time - hours * 3600 - minutes * 60
+    val hours = time / SECOND_IN_HOUR
+    val minutes = (time - hours * SECOND_IN_HOUR) / SECOND_IN_MINUTE
+    val seconds = time - hours * SECOND_IN_HOUR - minutes * SECOND_IN_MINUTE
 
-    val hoursText = convertToText(hours)
-    val minutesText = convertToText(minutes)
-    val secondsText = convertToText(seconds)
-
-    println("$hoursText:$minutesText:$secondsText")
-
-}
-
-fun convertToText(value: Int) : String {
-
-    return if (value < 10) {
-        "0$value"
-    } else {
-        "$value"
-    }
+    println("%02d:%02d:%02d".format(hours, minutes, seconds))
 
 }
