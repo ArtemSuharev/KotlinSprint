@@ -6,7 +6,7 @@ fun main() {
     var hour: String = "09"
     var minute: String = "07"
 
-    println("Год вылета: $year")
+    println("Год полета: $year")
     println("Время вылета: $hour:$minute")
 
     hour = "10"
