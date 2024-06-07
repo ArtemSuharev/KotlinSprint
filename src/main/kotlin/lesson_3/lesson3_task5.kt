@@ -4,9 +4,11 @@ fun main() {
 
     val postData = "D2-D4;0"
 
-    val currencyStep = "${postData[0]}${postData[1]}"
-    val nextStep = "${postData[3]}${postData[4]}"
-    val numberStep : Int = postData.split(";")[1].toInt()
+    val splitArray = postData.split("-",";")
+
+    val currencyStep = splitArray[0]
+    val nextStep = splitArray[1]
+    val numberStep = splitArray[2]
 
     println("Откуда: $currencyStep")
     println("Куда: $nextStep")
