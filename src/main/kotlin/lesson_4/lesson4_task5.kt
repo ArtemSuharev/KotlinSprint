@@ -7,20 +7,20 @@ const val MIN_BOX_COUNT = 50
 fun main() {
 
     println("Наличие повреждений корпуса (да/нет):")
-    val isDamage : Boolean = (readlnOrNull() == "да")
+    val isDamage: Boolean = (readln() == "да")
 
     println("Текущий состав экипажа (количество человек):")
-    val crewCount : Int = readlnOrNull().toString().toInt()
+    val crewCount: Int = readln().toInt()
 
     println("Количество ящиков с провизией на борту:")
-    val boxCount : Int = readlnOrNull().toString().toInt()
+    val boxCount: Int = readln().toInt()
 
     println("Благоприятность метеоусловий (да/нет):")
-    val isWeather : Boolean = (readlnOrNull() == "да")
+    val isGoodWeather: Boolean = (readln() == "да")
 
     val isShipFlight =
         (!isDamage && (crewCount in MIN_CREW_COUNT..MAX_CREW_COUNT) && boxCount > MIN_BOX_COUNT) ||
-        (isDamage && isWeather && crewCount == MAX_CREW_COUNT && boxCount >= MIN_BOX_COUNT)
+                (isGoodWeather && crewCount == MAX_CREW_COUNT && boxCount >= MIN_BOX_COUNT)
 
     if (isShipFlight) {
         println("Корабль может отправиться в плавание")
